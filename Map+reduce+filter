@@ -1,0 +1,24 @@
+from functools import reduce
+# Define the two trending topics
+topic1 = "Python"
+topic2 = "Data Science"
+# Define a list of tweets
+tweets = [
+"I love Python and data science",
+"Data science is the future",
+"Python is my favorite programming language",
+"I'm learning data science",
+"Python is used for machine learning",
+"Data science is a hot topic",
+"I need to improve my Python skills",
+]
+# Define a function to check if a tweet contains a given topic
+def contains_topic(tweet, topic):
+  return topic.lower() in tweet.lower()
+# Use the filter function to filter out tweets that don't contain either topic
+relevant_tweets = list(filter(lambda tweet: contains_topic(tweet, topic1) or contains_topic(tweet, topic2), tweets))
+# Use the map function to count the number of tweets that contain eachtopic
+count1, count2 = reduce(lambda counts, tweet: (counts[0] + contains_topic(tweet, topic1), counts[1] + contains_topic(tweet, topic2)), relevant_tweets, (0, 0))
+# Print the results
+print(f"Number of tweets containing {topic1}: {count1}")
+print(f"Number of tweets containing {topic2}: {count2}")
