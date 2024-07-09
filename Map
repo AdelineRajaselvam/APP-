@@ -1,0 +1,5 @@
+message = "secret message"
+shift = 3
+encrypted_message = ''.join(map(lambda char: chr((ord(char) - 97 + shift) % 26 + 97) if char.isalpha() else char, message))
+print(encrypted_message)
+
