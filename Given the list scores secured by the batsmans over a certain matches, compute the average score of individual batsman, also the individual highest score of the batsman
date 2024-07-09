@@ -1,0 +1,19 @@
+# Define the list of scores secured by batsmen over certain matches
+scores = [
+[10, 25, 15, 20, 18],
+[30, 28, 42, 39, 40],
+[12, 5, 8, 20, 18],
+[42, 56, 24, 39, 45]
+]
+# Define a function to compute the average and highest score of a batsman
+def get_batsman_stats(scores):
+  total_score = sum(scores)
+  avg_score = total_score / len(scores)
+  highest_score = max(scores)
+  return avg_score, highest_score
+# Use the map function to apply the get_batsman_stats function to eachbatsman
+batsman_stats = list(map(lambda batsman_scores: get_batsman_stats(batsman_scores), scores))
+# Print the results
+print("Batsman statistics:")
+for i, (avg_score, highest_score) in enumerate(batsman_stats):
+  print(f"Batsman {i+1}: Average score = {avg_score:.2f}, Highest score = {highest_score}")
