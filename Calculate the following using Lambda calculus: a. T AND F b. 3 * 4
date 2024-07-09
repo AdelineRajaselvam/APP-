@@ -1,0 +1,7 @@
+ T = lambda x: lambda y: x
+F = lambda x: lambda y: y
+mult = lambda x: lambda y: x * y
+result1 = (lambda x: lambda y: x)(F)(T)
+print(result1)
+result2 = mult(3)(4)
+print(result2)
