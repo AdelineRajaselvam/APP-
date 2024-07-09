@@ -1,0 +1,5 @@
+def multiplier_of(n):
+def
+multiplier(number):
+return number*n
+return multiplier
