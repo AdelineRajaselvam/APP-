@@ -1,0 +1,18 @@
+import functools
+# Define the list of scores secured by students as a multidimensional list
+scores = [
+[70, 80, 90],
+[60, 65, 70],
+[80, 90, 95],
+[85, 80, 90],
+[75, 70, 80]
+]
+# Define a function to get the index of the top scorer in a list of scores
+def get_top_scorer_index(scores):
+  return functools.reduce(lambda i, j: i if scores[i] > scores[j] else j, range(len(scores)))
+# Use the map function to apply the get_top_scorer_index function to each subject
+top_scorers = list(map(lambda subject_scores: get_top_scorer_index(subject_scores), zip(*scores)))
+# Print the results
+print("Index of top scorer in each subject:")
+for i, top_scorer in enumerate(top_scorers):
+  print(f"Subject {i+1}: Student {top_scorer+1}")
