@@ -1,0 +1,6 @@
+meters_to_feet = lambda meters: meters * 3.28084
+print(meters_to_feet(5))
+expression = lambda a, b: (lambda f: lambda m: f(a) + m(a))(lambda x: x
+**2)(lambda x: b)
+print(expression(3, 4))
+
